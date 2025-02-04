@@ -16,14 +16,8 @@ type Project = {
   company: string;
   location: string;
   period: string;
-  details: React.ReactNode[];
+  details: (string | JSX.Element)[];
   tags?: string[];
-};
-
-type ProjectModalProps = {
-  isOpen: boolean;
-  closeModal: () => void;
-  project: Project;
 };
 
 const Experience = () => {
@@ -121,28 +115,27 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="scroll-mt-16 relative">
-      <div className="absolute -top-20 -right-20 w-72 h-72 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-full filter blur-3xl opacity-30" />
+    <section id="experience" className="section-modern scroll-mt-16 py-20">
+      <div className="pattern-grid absolute inset-0 opacity-[0.05]" />
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="relative"
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="flex items-center gap-4 mb-8">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-20" />
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text flex items-center gap-3">
+        <div className="flex items-center gap-4 mb-12">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
+          <h2 className="heading-serif text-4xl gradient-text-primary flex items-center gap-3">
             <Briefcase className="w-8 h-8 text-indigo-600" />
             Experience
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-20" />
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
         </div>
 
         <div className="space-y-12">
           <div>
-            <h3 className="text-2xl font-semibold mb-6 text-indigo-600">
+            <h3 className="text-2xl font-semibold mb-8 gradient-text-secondary">
               Work Experience
             </h3>
             {experiences.map((exp, index) => (
@@ -151,31 +144,29 @@ const Experience = () => {
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-indigo-50 hover:shadow-indigo-100/50 transition-all duration-500"
+                className="modern-card hover-card-rise mb-6 p-8"
               >
-                <h4 className="text-xl font-semibold text-gray-800">
-                  {exp.title}
-                </h4>
-                <div className="flex flex-wrap gap-4 mt-2 text-gray-600">
-                  <span className="flex items-center gap-1">
+                <h4 className="text-xl font-bold text-gray-800">{exp.title}</h4>
+                <div className="flex flex-wrap gap-4 mt-3 text-gray-600">
+                  <span className="flex items-center gap-1.5 badge-modern">
                     <MapPin className="w-4 h-4" />
                     {exp.company} | {exp.location}
                   </span>
-                  <span className="flex items-center gap-1">
+                  <span className="flex items-center gap-1.5 badge-modern">
                     <Calendar className="w-4 h-4" />
                     {exp.period}
                   </span>
                 </div>
-                <ul className="mt-4 space-y-2">
+                <ul className="mt-6 space-y-3">
                   {exp.responsibilities.map((resp, idx) => (
                     <motion.li
                       key={idx}
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2 + idx * 0.1 }}
-                      className="flex items-start gap-2 text-gray-700"
+                      className="flex items-start gap-3 text-gray-700"
                     >
-                      <span className="mt-1.5 w-1.5 h-1.5 bg-indigo-500 rounded-full flex-shrink-0" />
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex-shrink-0" />
                       {resp}
                     </motion.li>
                   ))}
@@ -185,7 +176,7 @@ const Experience = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-6 text-indigo-600">
+            <h3 className="text-2xl font-semibold mb-8 gradient-text-secondary">
               Projects
             </h3>
             <div className="grid md:grid-cols-2 gap-6">
@@ -196,18 +187,18 @@ const Experience = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
                   whileHover={{ scale: 1.02 }}
-                  className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-xl p-6 border border-indigo-50 cursor-pointer hover:shadow-indigo-100/50 transition-all duration-500"
+                  className="glass-morphism p-6 cursor-pointer hover-card-rise"
                   onClick={() => openProjectModal(project)}
                 >
-                  <h4 className="text-xl font-semibold text-gray-800">
+                  <h4 className="text-xl font-bold text-gray-800">
                     {project.title}
                   </h4>
-                  <div className="flex flex-wrap gap-2 mt-2 text-gray-600 text-sm">
-                    <span className="flex items-center gap-1">
+                  <div className="flex flex-wrap gap-3 mt-3">
+                    <span className="flex items-center gap-1.5 badge-modern">
                       <MapPin className="w-4 h-4" />
                       {project.company}
                     </span>
-                    <span className="flex items-center gap-1">
+                    <span className="flex items-center gap-1.5 badge-modern">
                       <Calendar className="w-4 h-4" />
                       {project.period}
                     </span>
@@ -216,7 +207,9 @@ const Experience = () => {
                     {project.tags?.map((tag, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm"
+                        className="px-3 py-1 text-sm font-medium rounded-full
+                          bg-gradient-to-r from-indigo-50 to-purple-50
+                          text-indigo-700 border border-indigo-100/50"
                       >
                         {tag}
                       </span>

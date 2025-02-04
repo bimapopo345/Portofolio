@@ -1,8 +1,19 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Award, Calendar, MapPin, ExternalLink } from "lucide-react";
 
+interface Certification {
+  title: string;
+  organization: string;
+  location: string;
+  date: string;
+  details: string[];
+  certificate?: string;
+  color: string;
+}
+
 const Certifications = () => {
-  const certifications = [
+  const certifications: Certification[] = [
     {
       title: "Mini Bootcamp: QA Engineer",
       organization: "Digital Skola",
@@ -180,23 +191,22 @@ const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="scroll-mt-16 relative">
-      <div className="absolute -top-20 -right-20 w-72 h-72 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-full filter blur-3xl opacity-30" />
+    <section id="certifications" className="section-modern scroll-mt-16 py-20">
+      <div className="pattern-grid absolute inset-0 opacity-[0.05]" />
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="relative"
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div className="flex items-center gap-4 mb-12">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-20" />
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text flex items-center gap-3">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
+          <h2 className="heading-serif text-4xl gradient-text-primary flex items-center gap-3">
             <Award className="w-8 h-8 text-indigo-600" />
             Certifications
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-20" />
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -210,9 +220,12 @@ const Certifications = () => {
               whileHover={{ y: -5 }}
               className="relative group"
             >
-              <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-indigo-50 relative overflow-hidden">
+              <div className="modern-card p-8 relative overflow-hidden">
                 <div
-                  className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${cert.color}`}
+                  className={`absolute -top-0.5 left-0 right-0 h-1.5 bg-gradient-to-r ${cert.color}`}
+                />
+                <div
+                  className={`absolute -bottom-0.5 left-0 right-0 h-1.5 bg-gradient-to-r ${cert.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                 />
 
                 <h3 className="text-xl font-bold text-gray-800 mb-3">
@@ -221,24 +234,26 @@ const Certifications = () => {
 
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center gap-2 text-gray-600">
-                    <MapPin className="w-4 h-4" />
-                    <span>
+                    <span className="badge-modern flex items-center gap-1.5">
+                      <MapPin className="w-4 h-4" />
                       {cert.organization} | {cert.location}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-600">
-                    <Calendar className="w-4 h-4" />
-                    <span>{cert.date}</span>
+                    <span className="badge-modern flex items-center gap-1.5">
+                      <Calendar className="w-4 h-4" />
+                      {cert.date}
+                    </span>
                   </div>
                 </div>
 
-                <ul className="space-y-2 mb-4">
+                <ul className="space-y-3 mb-4">
                   {cert.details.map((detail, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-2 text-gray-700"
+                      className="flex items-start gap-3 text-gray-700"
                     >
-                      <span className="mt-1.5 w-1.5 h-1.5 bg-indigo-500 rounded-full flex-shrink-0" />
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex-shrink-0" />
                       <span>{detail}</span>
                     </li>
                   ))}
@@ -249,14 +264,12 @@ const Certifications = () => {
                     href={cert.certificate}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 transition-colors"
+                    className="btn-modern inline-flex items-center gap-2 text-sm"
                   >
                     <ExternalLink className="w-4 h-4" />
                     View Certificate
                   </a>
                 )}
-
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </motion.div>
           ))}
