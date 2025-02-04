@@ -1,6 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, Calendar, MapPin, ExternalLink } from "lucide-react";
+import {
+  Certificate,
+  Calendar,
+  MapPin,
+  ArrowSquareOut,
+} from "@phosphor-icons/react";
 
 interface Certification {
   title: string;
@@ -50,6 +55,8 @@ const Certifications = () => {
       date: "March, 2024",
       details: [
         "Completed an intensive training on full stack development with Jabar Digital Academy, Alkademi, and AWS InCommunities",
+        "Mastered modern web development technologies and cloud integration practices",
+        "Developed real-world projects using industry-standard tools and methodologies",
       ],
       certificate: "https://sidebar.jabarprov.go.id/v/B820BC3DAC",
       color: "from-emerald-500 to-teal-500",
@@ -60,7 +67,9 @@ const Certifications = () => {
       location: "Bogor, Indonesia",
       date: "March, 2024",
       details: [
-        "Completed AWS Cloud Engineer training under the Talent Scouting Academy Digital Talent Scholarship 2024 by Pusbang Proserti",
+        "Completed AWS Cloud Engineer training under the Talent Scouting Academy Digital Talent Scholarship 2024",
+        "Mastered cloud infrastructure, deployment, and management using AWS services",
+        "Developed practical skills in cloud architecture and solutions design",
       ],
       certificate:
         "https://drive.google.com/drive/folders/1EYMtgCATVS6Kdh_caUF7GxSyyuiUQWX1?hl=id",
@@ -74,6 +83,7 @@ const Certifications = () => {
       details: [
         "Completed intensive training focusing on Data Analysis, Basic Statistics, Data Formatting & Cleansing",
         "Mastered SQL, Python, and Data Visualization techniques",
+        "Applied analytical skills to real-world data scenarios and business cases",
       ],
       certificate:
         "https://drive.google.com/drive/folders/15JYMjybPeQB4IIQLRfTJdZhqAkVKVC1u?hl=id",
@@ -86,7 +96,8 @@ const Certifications = () => {
       date: "December, 2023",
       details: [
         "Completed an intensive backend development course focusing on Golang through SMKDEV Bootcamp Scholarship",
-        "Gained hands-on experience and advanced programming skills in Go (Programming Language) and Back-End Web Development",
+        "Gained hands-on experience and advanced programming skills in Go (Programming Language)",
+        "Developed robust backend systems and RESTful APIs using Go ecosystem",
       ],
       certificate:
         "https://drive.google.com/drive/folders/1C2snLuYudPFXVhq0YRBn9rlEp2Djfyjn?hl=id",
@@ -98,27 +109,13 @@ const Certifications = () => {
       location: "Bogor, Indonesia",
       date: "October, 2023",
       details: [
-        "Completed a 15-hour training in Ethical Hacking and IT Countermeasures from Course-Net, accredited by Prakerja",
-        "Acquired advanced skills for Cyber Security, Pentesting, and White Hat Hacking",
-        "Focus on critical SOC competencies as per SKKNI No. 391 of 2020",
+        "Completed 15-hour training in Ethical Hacking and IT Countermeasures, accredited by Prakerja",
+        "Acquired advanced skills in Cyber Security, Pentesting, and White Hat Hacking",
+        "Mastered critical SOC competencies as per SKKNI No. 391 of 2020",
       ],
       certificate:
         "https://drive.google.com/drive/folders/1Fo9WOU5T87Zcaw2paHmF-TbkWVmHZy3z?hl=id",
       color: "from-yellow-500 to-amber-500",
-    },
-    {
-      title: "Quality Assurance Top Participant - Batch 10",
-      organization: "Talenthub Indonesia",
-      location: "Bogor, Indonesia",
-      date: "October, 2023",
-      details: [
-        "Certified Top Participant in Quality Assurance Class - Talent Class Batch 10",
-        "Excelled in Quality Assurance, Testing, Software Quality Assurance, Postman API",
-        "Mastered SDLC, Scrum, Agile Methodologies, and Report Writing",
-      ],
-      certificate:
-        "https://drive.google.com/drive/folders/1Fo9WOU5T87Zcaw2paHmF-TbkWVmHZy3z?hl=id",
-      color: "from-green-500 to-emerald-500",
     },
     {
       title: "Quality Assurance Automation",
@@ -127,7 +124,8 @@ const Certifications = () => {
       date: "October, 2023",
       details: [
         "Successfully completed a comprehensive Quality Assurance Automation course",
-        "Enhanced skills in test automation and API testing",
+        "Enhanced skills in test automation frameworks and API testing methodologies",
+        "Implemented automated testing solutions for web applications",
       ],
       certificate:
         "https://sanbercode.com/certificate/em/de734b23-cc42-4e64-b997-cabf84ad98fe",
@@ -140,39 +138,12 @@ const Certifications = () => {
       date: "October, 2023",
       details: [
         "Successfully completed an intensive Web Pentest & Bug Bounty program",
-        "Mastered advanced cybersecurity techniques and tools",
+        "Mastered advanced cybersecurity techniques and pentesting tools",
+        "Practiced ethical hacking methodologies and vulnerability assessment",
       ],
       certificate:
         "https://sanbercode.com/certificate/in/1ad0d0ff-fa4d-4ad9-a243-ab3e15443789",
       color: "from-indigo-500 to-violet-500",
-    },
-    {
-      title: "Python Data Science Top Performer",
-      organization: "SanberCode",
-      location: "Bogor, Indonesia",
-      date: "September, 2023",
-      details: [
-        "Top Performer Award recipient in Data Science Bootcamp",
-        "Mastered Python, data manipulation with Pandas, and machine learning with Scikit-Learn",
-        "Excelled in data visualization using Matplotlib and Seaborn",
-      ],
-      certificate:
-        "https://sanbercode.com/certificate/in/c71e8955-f2ea-45cd-8218-9583b51e212a",
-      color: "from-teal-500 to-cyan-500",
-    },
-    {
-      title: "Quality Assurance Engineer",
-      organization: "PINTAR",
-      location: "Bogor, Indonesia",
-      date: "September, 2023",
-      details: [
-        "Completed 113-day intensive online Quality Assurance course",
-        "Certified by Certificate Organizing Body, verified by Pintar and Prakerja",
-        "Enhanced software testing and quality assurance protocols",
-      ],
-      certificate:
-        "https://drive.google.com/drive/folders/1iffWjlnh81VXoROLYgeDbfmemTVcGdZZ?hl=id",
-      color: "from-orange-500 to-amber-500",
     },
     {
       title: "Front End Developer",
@@ -203,7 +174,7 @@ const Certifications = () => {
         <div className="flex items-center gap-4 mb-12">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
           <h2 className="heading-serif text-4xl gradient-text-primary flex items-center gap-3">
-            <Award className="w-8 h-8 text-indigo-600" />
+            <Certificate className="w-8 h-8 text-indigo-600" weight="fill" />
             Certifications
           </h2>
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
@@ -235,13 +206,13 @@ const Certifications = () => {
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center gap-2 text-gray-600">
                     <span className="badge-modern flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4" />
+                      <MapPin className="w-4 h-4" weight="bold" />
                       {cert.organization} | {cert.location}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-600">
                     <span className="badge-modern flex items-center gap-1.5">
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-4 h-4" weight="bold" />
                       {cert.date}
                     </span>
                   </div>
@@ -253,7 +224,9 @@ const Certifications = () => {
                       key={idx}
                       className="flex items-start gap-3 text-gray-700"
                     >
-                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex-shrink-0" />
+                      <span
+                        className={`mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${cert.color} flex-shrink-0`}
+                      />
                       <span>{detail}</span>
                     </li>
                   ))}
@@ -264,10 +237,10 @@ const Certifications = () => {
                     href={cert.certificate}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-modern inline-flex items-center gap-2 text-sm"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors duration-200"
                   >
-                    <ExternalLink className="w-4 h-4" />
-                    View Certificate
+                    View Certificate{" "}
+                    <ArrowSquareOut className="w-4 h-4" weight="bold" />
                   </a>
                 )}
               </div>

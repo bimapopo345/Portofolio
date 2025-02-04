@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Trophy, Calendar, MapPin } from "lucide-react";
+import { Trophy, Calendar, MapPin, Link } from "@phosphor-icons/react";
 
 interface Award {
   title: string;
@@ -8,6 +8,7 @@ interface Award {
   location: string;
   date: string;
   details: string[];
+  certificateUrl?: string;
   color: string;
 }
 
@@ -23,6 +24,8 @@ const Awards: React.FC = () => {
         "Represented Indonesia in the Round 2 Asia Pacific Level, competing against top candidates from across the region",
         "Recognized for exceptional proficiency in network configuration, troubleshooting, and use of Cisco technologies",
       ],
+      certificateUrl:
+        "https://drive.google.com/drive/folders/1TX7BiX9SOb9ZcNqzfCSmuxvaJgJKFfYO?hl=id",
       color: "from-amber-500 to-yellow-500",
     },
     {
@@ -31,10 +34,12 @@ const Awards: React.FC = () => {
       location: "Bogor, Indonesia",
       date: "October, 2023",
       details: [
-        "Certified Top Participant in Quality Assurance Class - Talent Class Batch 10",
+        "Certified Top Participant in Quality Assurance Class - Talent Class Batch 10 by Talenthub, Ministry of Manpower",
         "Excelled in Quality Assurance, Testing, Software Quality Assurance, Postman API, SDLC, Scrum, Agile Methodologies",
         "Demonstrated strong skills in ensuring software quality and effective collaboration within Agile teams",
       ],
+      certificateUrl:
+        "https://drive.google.com/drive/folders/1IBXQZ-NIeQnazxUq00GWW-rtYYnc4uur?hl=id",
       color: "from-emerald-500 to-teal-500",
     },
     {
@@ -43,10 +48,12 @@ const Awards: React.FC = () => {
       location: "Bogor, Indonesia",
       date: "September, 2023",
       details: [
-        "Recipient of the Python Data Science Excellence Award",
-        "Demonstrated superior mastery in Python and data analysis",
-        "Excelled in model performance evaluation and advanced data transformation techniques",
+        "Recipient of the Python Data Science Excellence Award as the top graduate of intensive Data Science Bootcamp",
+        "Demonstrated superior mastery in Python, data analysis, including Pandas, Scikit-Learn, and data visualization",
+        "Excelled in model performance evaluation, exploratory data analysis, and advanced data transformation",
       ],
+      certificateUrl:
+        "https://drive.google.com/drive/folders/1W98mEskLxX6e-JvKYA9jPJ9IkVOovtvo?hl=id",
       color: "from-blue-500 to-indigo-500",
     },
   ];
@@ -64,7 +71,7 @@ const Awards: React.FC = () => {
         <div className="flex items-center gap-4 mb-12">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
           <h2 className="heading-serif text-4xl gradient-text-secondary flex items-center gap-3">
-            <Trophy className="w-8 h-8 text-amber-600" />
+            <Trophy className="w-8 h-8 text-amber-600" weight="fill" />
             Awards & Honors
           </h2>
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
@@ -96,13 +103,13 @@ const Awards: React.FC = () => {
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center gap-2 text-gray-600">
                     <span className="badge-modern flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4" />
+                      <MapPin className="w-4 h-4" weight="bold" />
                       {award.organization} | {award.location}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-600">
                     <span className="badge-modern flex items-center gap-1.5">
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-4 h-4" weight="bold" />
                       {award.date}
                     </span>
                   </div>
@@ -119,11 +126,24 @@ const Awards: React.FC = () => {
                         key={idx}
                         className="flex items-start gap-3 text-gray-700"
                       >
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 flex-shrink-0" />
+                        <span
+                          className={`mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${award.color} flex-shrink-0`}
+                        />
                         <span>{detail}</span>
                       </li>
                     ))}
                   </ul>
+                  {award.certificateUrl && (
+                    <a
+                      href={award.certificateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700"
+                    >
+                      View Certificate{" "}
+                      <Link className="w-4 h-4" weight="bold" />
+                    </a>
+                  )}
                 </motion.div>
               </div>
             </motion.div>

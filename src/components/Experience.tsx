@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ProjectModal from "./ProjectModal";
-import { Briefcase, Calendar, MapPin, ExternalLink } from "lucide-react";
+import { Briefcase, Calendar, MapPin } from "@phosphor-icons/react";
 
 type Experience = {
   title: string;
@@ -83,16 +83,17 @@ const Experience = () => {
         "Utilized Kotlin for backend development and Figma for UI/UX design",
         "Integrated Sirkemkes API for emergency services and implemented data visualization features",
       ],
-      tags: ["Kotlin", "Figma", "API Integration"],
+      tags: ["Kotlin", "Figma", "API Integration", "UI/UX Design"],
     },
     {
-      title: "Front End Developer Proclass",
+      title: "Staycation Website - Food Company Platform",
       company: "Harisenin.com",
       location: "Bogor, Indonesia",
       period: "Jan, 2024 - Feb, 2024",
       details: [
-        "Final Project: Designed and developed a website for an Food Company within two months",
-        "Relevant Course works: HTML, CSS, JavaScript, React Js, Bootstrap",
+        "Designed and developed a modern, responsive website for a food company within two months",
+        "Implemented key features including user authentication, food ordering system, and dynamic content management",
+        "Utilized React.js and Bootstrap for frontend development with responsive design principles",
         <React.Fragment key="certificate">
           Certificate:{" "}
           <a
@@ -101,11 +102,11 @@ const Experience = () => {
             rel="noopener noreferrer"
             className="text-indigo-600 hover:text-indigo-700 underline inline-flex items-center gap-1"
           >
-            View Certificate <ExternalLink className="w-4 h-4" />
+            View Certificate
           </a>
         </React.Fragment>,
       ],
-      tags: ["React", "Bootstrap", "JavaScript"],
+      tags: ["React.js", "Bootstrap", "JavaScript", "Responsive Design"],
     },
   ];
 
@@ -127,7 +128,7 @@ const Experience = () => {
         <div className="flex items-center gap-4 mb-12">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
           <h2 className="heading-serif text-4xl gradient-text-primary flex items-center gap-3">
-            <Briefcase className="w-8 h-8 text-indigo-600" />
+            <Briefcase className="w-8 h-8 text-indigo-600" weight="bold" />
             Experience
           </h2>
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
@@ -149,11 +150,11 @@ const Experience = () => {
                 <h4 className="text-xl font-bold text-gray-800">{exp.title}</h4>
                 <div className="flex flex-wrap gap-4 mt-3 text-gray-600">
                   <span className="flex items-center gap-1.5 badge-modern">
-                    <MapPin className="w-4 h-4" />
+                    <MapPin className="w-4 h-4" weight="bold" />
                     {exp.company} | {exp.location}
                   </span>
                   <span className="flex items-center gap-1.5 badge-modern">
-                    <Calendar className="w-4 h-4" />
+                    <Calendar className="w-4 h-4" weight="bold" />
                     {exp.period}
                   </span>
                 </div>
@@ -195,11 +196,11 @@ const Experience = () => {
                   </h4>
                   <div className="flex flex-wrap gap-3 mt-3">
                     <span className="flex items-center gap-1.5 badge-modern">
-                      <MapPin className="w-4 h-4" />
+                      <MapPin className="w-4 h-4" weight="bold" />
                       {project.company}
                     </span>
                     <span className="flex items-center gap-1.5 badge-modern">
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-4 h-4" weight="bold" />
                       {project.period}
                     </span>
                   </div>
