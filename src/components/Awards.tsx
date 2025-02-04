@@ -1,8 +1,18 @@
-import { motion } from 'framer-motion'
-import { Trophy, Calendar, MapPin } from 'lucide-react'
+import React from "react";
+import { motion } from "framer-motion";
+import { Trophy, Calendar, MapPin } from "lucide-react";
 
-const Awards = () => {
-  const awards = [
+interface Award {
+  title: string;
+  organization: string;
+  location: string;
+  date: string;
+  details: string[];
+  color: string;
+}
+
+const Awards: React.FC = () => {
+  const awards: Award[] = [
     {
       title: "First Place, NetAcad Riders 2024",
       organization: "Cisco Networking Academy",
@@ -11,9 +21,9 @@ const Awards = () => {
       details: [
         "Secured the top position in a prestigious competition focused on Computer Networking Skills",
         "Represented Indonesia in the Round 2 Asia Pacific Level, competing against top candidates from across the region",
-        "Recognized for exceptional proficiency in network configuration, troubleshooting, and use of Cisco technologies"
+        "Recognized for exceptional proficiency in network configuration, troubleshooting, and use of Cisco technologies",
       ],
-      color: "from-amber-500 to-yellow-500"
+      color: "from-amber-500 to-yellow-500",
     },
     {
       title: "Top Participant Award - Quality Assurance Class Batch 10",
@@ -23,9 +33,9 @@ const Awards = () => {
       details: [
         "Certified Top Participant in Quality Assurance Class - Talent Class Batch 10",
         "Excelled in Quality Assurance, Testing, Software Quality Assurance, Postman API, SDLC, Scrum, Agile Methodologies",
-        "Demonstrated strong skills in ensuring software quality and effective collaboration within Agile teams"
+        "Demonstrated strong skills in ensuring software quality and effective collaboration within Agile teams",
       ],
-      color: "from-emerald-500 to-teal-500"
+      color: "from-emerald-500 to-teal-500",
     },
     {
       title: "Python Data Science Top Performer Award",
@@ -35,16 +45,16 @@ const Awards = () => {
       details: [
         "Recipient of the Python Data Science Excellence Award",
         "Demonstrated superior mastery in Python and data analysis",
-        "Excelled in model performance evaluation and advanced data transformation techniques"
+        "Excelled in model performance evaluation and advanced data transformation techniques",
       ],
-      color: "from-blue-500 to-indigo-500"
-    }
-  ]
+      color: "from-blue-500 to-indigo-500",
+    },
+  ];
 
   return (
     <section id="awards" className="scroll-mt-16 relative">
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-gradient-to-br from-yellow-200 to-amber-200 rounded-full filter blur-3xl opacity-30" />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -73,14 +83,20 @@ const Awards = () => {
               className="group"
             >
               <div className="bg-white/50 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-amber-50 relative overflow-hidden">
-                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${award.color}`} />
-                
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{award.title}</h3>
-                
+                <div
+                  className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${award.color}`}
+                />
+
+                <h3 className="text-xl font-bold text-gray-800 mb-4">
+                  {award.title}
+                </h3>
+
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center gap-2 text-gray-600">
                     <MapPin className="w-4 h-4" />
-                    <span>{award.organization} | {award.location}</span>
+                    <span>
+                      {award.organization} | {award.location}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-600">
                     <Calendar className="w-4 h-4" />
@@ -95,7 +111,10 @@ const Awards = () => {
                 >
                   <ul className="space-y-2">
                     {award.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-gray-700">
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2 text-gray-700"
+                      >
                         <span className="mt-1.5 w-1.5 h-1.5 bg-amber-500 rounded-full flex-shrink-0" />
                         <span>{detail}</span>
                       </li>
@@ -110,7 +129,7 @@ const Awards = () => {
         </div>
       </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default Awards
+export default Awards;
