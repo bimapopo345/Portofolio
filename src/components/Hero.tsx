@@ -54,27 +54,6 @@ const Hero = () => {
         FULLSTACK DEVELOPER
       </motion.h2>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7 }}
-        className="max-w-3xl mx-auto px-6 text-lg text-gray-700 mb-12 leading-relaxed"
-      >
-        I am a passionate sixth-semester Computer Engineering student at IPB
-        University's College of Vocational Studies, with a proven track record
-        in Full-Stack Web Development. My expertise spans modern technologies
-        including
-        <span className="font-semibold text-blue-600"> React.js</span>,
-        <span className="font-semibold text-indigo-600"> Next.js</span>, and
-        <span className="font-semibold text-purple-600"> Node.js</span>,
-        complemented by strong foundations in
-        <span className="font-semibold text-sky-600"> HTML</span>,
-        <span className="font-semibold text-blue-600"> CSS</span>, and
-        <span className="font-semibold text-indigo-600"> JavaScript</span>. I
-        bring a detail-oriented approach to creating seamless, user-centric web
-        solutions.
-      </motion.p>
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
