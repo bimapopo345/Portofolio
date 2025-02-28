@@ -28,8 +28,7 @@ const Hero = () => {
         <div className="w-48 h-48 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full blur-lg opacity-50 animate-pulse" />
           <img
-            src="https://media.licdn.com/dms/image/v2/D5603AQEICy7uAJnVmQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726454284055?e=1738800000&v=beta&t=cj2ODyA0He1ua4fYG3WKDfjrsJ5qCnw7UW2KEsNHIo0"
-            alt="Profile"
+            src="https://media.licdn.com/dms/image/v2/D5603AQEICy7uAJnVmQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726454284030?e=1746057600&v=beta&t=QvWeJLaj6Giyw4wd9ige3Y6BksxbKJlvbss95gdmlSU"
             className="w-full h-full rounded-full object-cover border-4 border-white shadow-xl relative z-10"
           />
         </div>
